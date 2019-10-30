@@ -12,8 +12,6 @@ import os
 PDF_file = "d.pdf"
 
 
-
-# Store all the pages of the PDF in a variable 
 pages = convert_from_path(PDF_file, 500) 
 
 # Counter to store images of each page of PDF to image 
@@ -30,10 +28,8 @@ for page in pages:
 	# Increment the counter to update filename 
 	image_counter = image_counter + 1
 
-''' 
-Part #2 - Recognizing text from the images using OCR 
-'''
-	3
+
+
 # Variable to get count of total number of pages 
 filelimit = image_counter-1
 
