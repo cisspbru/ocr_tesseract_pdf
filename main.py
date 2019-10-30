@@ -10,22 +10,14 @@ import os
 
 
 PDF_file = "d.pdf"
-
-
 pages = convert_from_path(PDF_file, 500) 
 
 # Counter to store images of each page of PDF to image 
 image_counter = 1
 
 for page in pages: 
-
-	
 	filename = "page_"+str(image_counter)+".jpg"
-	
-	# Save the image of the page in system 
 	page.save(filename, 'JPEG') 
-
-	# Increment the counter to update filename 
 	image_counter = image_counter + 1
 
 
@@ -42,16 +34,10 @@ f = open(outfile, "a")
 
 # Iterate from 1 to total number of pages 
 for i in range(1, filelimit + 1): 
-
-	
-	filename = "page_"+str(i)+".jpg"
-		
+	filename = "page_"+str(i)+".jpg
 	# Recognize the text as string in image using pytesserct 
 	text = str(((pytesseract.image_to_string(Image.open(filename))))) 
-
-	
 	text = text.replace('-\n', '')	 
-
 	# Finally, write the processed text to the file. 
 	f.write(text) 
 
